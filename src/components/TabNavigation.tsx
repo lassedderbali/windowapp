@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Colors} from '../styles/colors';
 import {Typography} from '../styles/typography';
 
@@ -32,7 +32,7 @@ const TabNavigation: React.FC<Props> = ({activeTab, onTabChange}) => {
             activeTab === tab.id && styles.activeTab,
           ]}
           onPress={() => onTabChange(tab.id)}>
-          <MaterialIcons
+          <Icon
             name={tab.icon}
             size={20}
             color={activeTab === tab.id ? Colors.primary : Colors.textSecondary}

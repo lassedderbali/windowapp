@@ -7,7 +7,7 @@ import {
   FlatList,
   Alert,
 } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Colors} from '../styles/colors';
 import {Typography} from '../styles/typography';
 import Card from './Card';
@@ -69,7 +69,7 @@ const MaterialsDatabase = () => {
         <View style={styles.materialHeader}>
           <View style={styles.materialInfo}>
             <View style={styles.materialTitleRow}>
-              <MaterialIcons name="inventory" size={16} color={Colors.textSecondary} />
+              <Icon name="inventory" size={16} color={Colors.textSecondary} />
               <Text style={styles.materialRef}>{item.ref}</Text>
             </View>
             <Text style={styles.materialName}>{item.designation}</Text>
@@ -162,7 +162,7 @@ const MaterialsDatabase = () => {
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
           <Card style={styles.emptyState}>
-            <MaterialIcons name="inventory" size={48} color={Colors.textLight} />
+            <Icon name="inventory" size={48} color={Colors.textLight} />
             <Text style={styles.emptyText}>لا توجد مواد تطابق البحث</Text>
           </Card>
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Colors} from '../styles/colors';
 import {Typography} from '../styles/typography';
 
@@ -9,11 +9,11 @@ const Header = () => {
     <View style={styles.container}>
       <View style={styles.content}>
         <View style={styles.titleContainer}>
-          <MaterialIcons name="business" size={32} color={Colors.primary} />
+          <Icon name="business" size={32} color={Colors.primary} />
           <Text style={styles.title}>نظام حساب تكلفة النوافذ</Text>
         </View>
         <View style={styles.badge}>
-          <MaterialIcons name="attach-money" size={16} color={Colors.success} />
+          <Icon name="attach-money" size={16} color={Colors.success} />
           <Text style={styles.badgeText}>دقة في الحسابات</Text>
         </View>
       </View>

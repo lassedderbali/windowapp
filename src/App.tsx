@@ -4,9 +4,9 @@ import {
   Text,
   StyleSheet,
   ScrollView,
-  StatusBar,
   SafeAreaView,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import {Colors} from './styles/colors';
 import Header from './components/Header';
 import TabNavigation from './components/TabNavigation';
@@ -32,7 +32,7 @@ const App = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="dark-content" backgroundColor={Colors.white} />
+      <StatusBar style="dark" backgroundColor={Colors.white} />
       <Header />
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>

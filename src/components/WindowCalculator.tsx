@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {View, Text, ScrollView, StyleSheet, Alert} from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Share from 'react-native-share';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import * as Sharing from 'expo-sharing';
+import { MaterialIcons } from '@expo/vector-icons';
 import {Colors} from '../styles/colors';
 import {Typography} from '../styles/typography';
 import Card from './Card';
@@ -199,12 +199,18 @@ const WindowCalculator = () => {
     `;
 
     try {
-      await Share.open({
-        message: shareText,
-        title: 'نتائج حساب النافذة',
-      });
+      if (await Sharing.isAvailableAsync()) {
+        // Create a temporary file with the results
+        const fileName = `window-calculation-${Date.now()}.txt`;
+        const fileUri = `${FileSystem.documentDirectory}${fileName}`;
+        await FileSystem.writeAsStringAsync(fileUri, shareText);
+        await Sharing.shareAsync(fileUri);
+      } else {
+        Alert.alert('خطأ', 'المشاركة غير متاحة على هذا الجهاز');
+      }
     } catch (error) {
       console.log('Error sharing:', error);
+      Alert.alert('خطأ', 'فشل في مشاركة النتائج');
     }
   };
 

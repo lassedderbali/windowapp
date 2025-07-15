@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {View, Text, ScrollView, StyleSheet, Alert} from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import {Colors} from '../styles/colors';
 import {Typography} from '../styles/typography';
 import Card from './Card';
@@ -151,7 +151,7 @@ const OptimizationTools = () => {
           {/* Frame Results */}
           <Card>
             <View style={styles.resultHeader}>
-              <Icon name="build" size={24} color={Colors.primary} />
+              <MaterialIcons name="build" size={24} color={Colors.primary} />
               <Text style={styles.resultTitle}>نتائج القوافص (40100)</Text>
             </View>
 
@@ -193,7 +193,7 @@ const OptimizationTools = () => {
           {/* Sash Results */}
           <Card>
             <View style={styles.resultHeader}>
-              <Icon name="build" size={24} color={Colors.success} />
+              <MaterialIcons name="build" size={24} color={Colors.success} />
               <Text style={styles.resultTitle}>نتائج الفردات (6007)</Text>
             </View>
 
@@ -235,7 +235,7 @@ const OptimizationTools = () => {
           {/* Summary */}
           <Card style={styles.summaryCard}>
             <View style={styles.summaryHeader}>
-              <Icon name="trending-up" size={24} color={Colors.white} />
+              <MaterialIcons name="trending-up" size={24} color={Colors.white} />
               <Text style={styles.summaryTitle}>ملخص التحسين</Text>
             </View>
 
@@ -270,7 +270,7 @@ const OptimizationTools = () => {
         </>
       ) : (
         <Card style={styles.emptyState}>
-          <Icon name="build" size={64} color={Colors.textLight} />
+          <MaterialIcons name="build" size={64} color={Colors.textLight} />
           <Text style={styles.emptyTitle}>احسب التحسين</Text>
           <Text style={styles.emptyText}>
             أدخل قائمة النوافذ المطلوبة واضغط "احسب التحسين" لمعرفة الكمية المثلى

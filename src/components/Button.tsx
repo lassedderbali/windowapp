@@ -7,7 +7,7 @@ import {
   TextStyle,
   ActivityIndicator,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import { MaterialIcons } from '@expo/vector-icons';
 import {Colors} from '../styles/colors';
 import {Typography} from '../styles/typography';
 
@@ -71,7 +71,7 @@ const Button: React.FC<Props> = ({
       ) : (
         <>
           {icon && (
-            <Icon
+            <MaterialIcons
               name={icon}
               size={size === 'small' ? 16 : size === 'large' ? 24 : 20}
               color={variant === 'outline' ? Colors.primary : Colors.white}

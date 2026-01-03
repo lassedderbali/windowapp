@@ -5,9 +5,9 @@
   "scripts": {
     "android": "bash -c 'SHELL=/bin/bash react-native run-android'",
     "ios": "bash -c 'SHELL=/bin/bash react-native run-ios'",
-    "lint": "eslint .",
+    "lint": "bash -c 'SHELL=/bin/bash eslint .'",
     "start": "bash -c 'SHELL=/bin/bash react-native start'",
-    "test": "jest",
+    "test": "bash -c 'SHELL=/bin/bash jest'",
     "build": "bash -c 'SHELL=/bin/bash react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle'"
   },
   "dependencies": {
